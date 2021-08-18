@@ -1,0 +1,420 @@
+body,
+ul,
+li,
+h1,h2,h3,h4,
+figure,
+div,i,p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+body, i {
+
+    font-family: 'STIX Two Text',
+    serif;
+    margin: auto;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+span,
+h1,h2,h3,h4,p,
+label, li, div,
+.unpause-btn, .pause-btn, .replay-btn, i, button{
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.game-title{
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.244);
+    font-size: 30px;
+    font-weight: 700;
+}
+.snake-game{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+.game-display{
+    position: relative;
+}
+.center {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    transform: translate(-50%, -50%);
+    background: whitesmoke;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.grid-100,
+.grid-50 {
+    display: grid;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    width: max-content;
+    height: max-content;
+    background: rgba(214, 198, 198, 0.744);
+    border: 2px solid black;
+    height: 100%;
+}
+.grid-100{
+    grid-template-columns: repeat(100, 5px);
+    grid-template-rows: repeat(100, 5px);
+
+
+}
+.grid-50 {
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+}
+.coord{
+    max-width:10px;
+    max-height:10px;
+    min-width: 5px;
+    min-height: 5px;
+    width: 50%;
+    height: 50%;
+}
+
+.grid-50>.coord {
+    width: 10px;
+    height:10px;
+}
+
+.grid-100>.coord {
+    width: 5px;
+    height:5px;
+}
+.apple{
+    border-radius: 1px;
+    border-radius: 5px;
+    background-color: red;
+}
+.snake{
+    background-color: green;
+}
+
+.snake-head {
+    border-radius: 25%
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.counters{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.header-display{
+    padding: 0 20px;
+}
+.apples-counter-display, .highscore-display{
+
+}
+
+.header-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 125px;
+}
+.header-btn{
+    margin: 0 10px;
+    position: relative;
+    border: 3px solid #333;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.5);
+}
+.header-btn>.btn{
+    width: 50px;
+}
+
+.btn {
+    background-color: white;
+    border: none;
+    color: #333;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color:lightgray;
+}
+
+.menu {
+    z-index: 3;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    width: 250px;
+    border: 1px solid black;
+}
+
+
+.menu-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-btn{
+    background-color: inherit;
+    border: none;
+}
+label{
+    padding: 10px 0 0 5px ;
+}
+.play-game-display{
+    padding: 15px 0 0 0;
+}
+
+.exit-icon:hover, .help-icon:hover{
+    color: darkgray;
+    cursor: pointer;
+}
+.menu-title{
+    padding: 0 40px;
+    font-size: 20px;
+    font-weight: 700;
+    border-bottom: 1px solid black;
+}
+.game-over{
+    z-index: 2;
+    padding: 50px;
+    background: rgba(245, 245, 245, 0.5);
+}
+.game-over-text{
+    font-size: 20px;
+}
+
+
+/* removes highlighting buttons, prevents issues with selecting footer buttons*/
+.noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+:focus {
+    outline: none !important;
+}
+.speed-choices{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+
+}
+.speed-choice{
+    display: table;
+    border:none;
+    width: 30px;
+    margin: 0 15px;
+    border-radius: 30px;
+    padding: 0px;
+    /*margin: 0 auto;*/
+}
+.speed-choice>i{
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: middle;
+}
+
+.chosen-speed{
+    background-color: lightgray;
+}
+
+.speed-choice:hover{
+    cursor: pointer;
+}
+.slow-speed-choice:hover{
+    color:red
+}
+.normal-speed-choice:hover {
+    color:orange;
+}
+.fast-speed-choice:hover {
+    color:green;
+}
+.num-apples-selection{
+    cursor: pointer;
+}
+.num-apples-selection>i{
+    padding: 0 5px;
+}
+.selected-apple {
+    color: rgb(217, 8, 8);
+}
+
+.hovered-apple {
+    color: rgb(181, 0, 0);
+}
+.grid-size-choice{
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+.grid-size-choice:hover{
+    background: lightgray
+}
+.chosen-size:hover{
+    background: gray;
+    color: rgb(239, 220, 5);;
+}
+.chosen-size{
+    background: gray;
+    color: rgb(239, 220, 5);
+}
+
+.menu-play-game-btn:hover,
+.menu-replay-btn:hover{
+    background-color: black;
+    color: lightgray;
+}
+.menu-play-game-btn,
+.menu-replay-btn {
+    background-color: lightgray;
+    color: black;
+    border-radius: 5px;
+    border: 0px solid black;
+    padding: 8px;
+}
+/* position relative to .snake-game */
+.centered-popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.help-display{
+    background-color: white;
+    z-index: 4;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 340px;
+}
+.help-title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0 5px 0;
+}
+.instructions-list{
+    list-style: square inside;
+    width: 300px;
+}
+.instructions-list>li{
+    font-size: 15px;
+    text-align: justify;
+}
+.back-btn{
+    background: inherit;
+    width:10px;
+    height:10px;
+    border: none;
+    color: #333;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.back-btn:hover{
+    color: gray;
+}
+
+.apples-text {
+    color: red;
+    display: inline;
+}
+
+.snake-text {
+    color: green;
+    display: inline;
+}
+.control-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.lower-key-arrow-icons>span,
+.upper-key-arrow-icons>span,
+.space-icon>span,
+.keyboard {
+    width: 25px;
+    height: 25px;
+    background-color: lightgray;
+    text-align: center;
+    border: 1px solid gray;
+}
+.control-icons>p{
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+
+
+.keyboard {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+.disclaimer{
+    font-size: 8px;
+}
+.controls-title, .instructions-title{
+    font-weight: 600;
+}
+.help-buttons{
+    width:100%;
+    display: flex;
+    justify-content: flex-start;
+}
+.hidden {
+    display: none;
+}
