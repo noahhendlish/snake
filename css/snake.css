@@ -81,8 +81,8 @@ label, li, div,
     grid-row-gap: 0;
     width: max-content;
     height: max-content;
-    background: rgba(214, 198, 198, 0.744);
-    border: 2px solid black;
+    background: rgb(224, 216, 216);
+    border: 3px solid black;
     height: 100%;
 }
 .grid-100{
@@ -96,34 +96,37 @@ label, li, div,
     grid-template-rows: repeat(50, 1fr);
 }
 .coord{
-    max-width:10px;
-    max-height:10px;
-    min-width: 5px;
-    min-height: 5px;
+    max-width:8px;
+    max-height:8px;
+    min-width: 4px;
+    min-height: 4px;
     width: 50%;
     height: 50%;
+    border: 1px solid rgba(128, 128, 128, 0.1);
 }
 
 .grid-50>.coord {
-    width: 10px;
-    height:10px;
+    width: 8px;
+    height:8px;
 }
 
 .grid-100>.coord {
-    width: 5px;
-    height:5px;
+    width: 4px;
+    height:4px;
 }
 .apple{
-    border-radius: 1px;
-    border-radius: 5px;
+    border-radius: 30%;
+    /*border: 1px solid greenyellow;*/
     background-color: red;
 }
 .snake{
     background-color: green;
+    border: 1px solid rgb(0, 255, 132);
+    border-radius: 15%
 }
 
 .snake-head {
-    border-radius: 25%
+    border: 1px solid rgb(35, 129, 35);
 }
 
 .header{

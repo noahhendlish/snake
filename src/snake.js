@@ -8,6 +8,10 @@ class Snake{
         let centerBoardCoord = new Coord(Math.floor(board.size/2), Math.floor(board.size/2));
         this.turning = false;
         this.segments = [centerBoardCoord];
+        for(let i = 0; i < Snake.STARTING_LENGTH; i++){
+            this.segments.push(this.head().plus(this.direction));
+        }
+
         this.growTurns = 0;
         this.eatenApples = 0;
     }
@@ -86,6 +90,6 @@ class Snake{
         return true;
     }
 }
-
+Snake.STARTING_LENGTH = 4;
 Snake.DIRECTIONS = {'ArrowUp':new Coord(-1,0), 'ArrowLeft':new Coord(0, -1), 'ArrowDown':new Coord(1,0), 'ArrowRight':new Coord(0,1)}; //event.key : coord
 module.exports = Snake;
